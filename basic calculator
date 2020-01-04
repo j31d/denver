@@ -1,0 +1,60 @@
+from tkinter import*
+
+def mul():
+	input1 = textfield1.get()
+	input2 = textfield2.get()
+
+	mul = int(input1) * int(input2)
+	textfield3.insert(0,mul)
+
+def sum():
+	input1 = textfield1.get()
+	input2 = textfield2.get()
+
+	sum = int(input1) - int(input2)
+	textfield3.insert(0,sum)
+def devide():
+	input1 = textfield1.get()
+	input2 = textfield2.get()
+
+	devide = int(input1) / int(input2)
+	textfield3.insert(0,devide)
+def add():
+	input1 = textfield1.get()
+	input2 = textfield2.get()
+
+	add = int(input1) + int(input2)
+	textfield3.insert(0,add)
+
+
+window = Tk()
+
+lbl = Label (window, text = 'first input:')
+lbl.grid(row =0, column = 0)
+lbl = Label (window, text = 'second input:')
+lbl.grid(row =1, column = 0)
+lbl = Label (window, text = 'Output:')
+lbl.grid(row =2, column = 0)
+
+
+
+textfield1 = Entry (window)
+textfield1.grid(row = 0, column = 1)
+textfield2 = Entry (window)
+textfield2.grid(row = 1, column = 1)
+textfield3 = Entry (window)
+textfield3.grid(row = 2, column = 1)
+
+
+btn = Button(window, text = '*',width = 20,bg = 'gray',command = mul)
+btn.grid(row = 3, column = 0)
+btn = Button(window, text = '-',width = 20, bg = 'gray',command = sum)
+btn.grid(row = 3, column = 1)
+btn = Button(window, text = '+',width = 20, bg = 'gray',command = add)
+btn.grid(row = 4, column = 0)
+btn = Button(window, text = '/',width = 20, bg = 'gray',command = devide)
+btn.grid(row = 4, column = 1)
+
+
+window.geometry("280x115")
+window.mainloop()
